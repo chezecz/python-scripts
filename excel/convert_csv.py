@@ -20,5 +20,5 @@ for csvfile in glob.glob(os.path.join('..', '*.csv')):
             for c, col in enumerate(row):
                 worksheet.write(r, c, col)
         workbook.close()
-        destination = 'R:\Job Cost Analysis\Reports for Robert'
+        destination = r'R:\Job Cost Analysis\Reports for Robert'
         shutil.move(filename, destination)
