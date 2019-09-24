@@ -7,7 +7,7 @@ def get_items():
 	item_list = []
 
 	for i in range(2, ws.max_row):
-		item_list.append("'" + ws.cell(column = 1, row = i).value + "'")
+		item_list.append("'" + str(ws.cell(column = 1, row = i).value) + "'")
 
 	return item_list	
 
