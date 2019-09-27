@@ -38,7 +38,6 @@ left outer join job jb
 on jb.job = res.job_ref 
 left outer join coitem ci
 on jb.ord_num = ci.co_num
-where create_date > '2019/08/30'
 order by res.product_code, res.item, res.lot DESC"""
     
     return select_query
