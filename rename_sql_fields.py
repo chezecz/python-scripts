@@ -5,12 +5,12 @@ def query():
 
 def update_query(result):
     for i in result:
-        if i[1].split('@')[1] == 'lemacaustralia.com.au':
+        if i[1].split('@')[1] == 'website':
             if i[0][:-1] == i[2].split(" ")[0].lower():
                 name = i[1].split(" ")[0][:1].lower() + i[2].split(" ")[1].lower()
             else:
                 name = i[1].split('@')[0]
-            email_address = name + '@lemacpackaging.com.au'
+            email_address = name + '@website'
             query = f"""update usernames
             set EmailAddress = '{email_address}'
             where username = '{i[0]}'"""
