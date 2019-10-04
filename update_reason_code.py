@@ -2,11 +2,17 @@ import openpyxl
 
 wb = openpyxl.load_workbook('../Book1.xlsx')
 
-ws = wb['Sheet1']
+ws = wb['MiscellaneousIssuesReasonCodesE']
 
-def construct_sql_query(item, cost):
-    sql_string = f"update reason\nset description = 'false'\nwhere item NOT IN ({','.join(items)})"
-    print(sql_string)
+items = []
+description = []
+
+def construct_sql_query(items, description):
+    for item in items:
+        sql_string = f"update reason\nset description = {item[1]}\nwhere reason_code = {item[0]} and reason_class = 'MISC RCPT'"
+        print(sql_string)
 
 for i in range(2, ws.max_row):
-    construct_exec_query(ws.cell(column = 1, row = i).value)
+    items.append(("'" + str(ws.cell(column = 1, row = i).value) + "'", "'" + str(ws.cell(column = 2, row = i).value) + "'"))
+
+construct_sql_query(items, description)
