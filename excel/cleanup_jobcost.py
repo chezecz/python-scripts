@@ -48,7 +48,7 @@ def remove_rows(worksheet, worksheet_max_row):
         if re.match("^\d{1,2}\/\d{1,2}\/\d{4}$", str(worksheet.cell(row = i, column = 1).value)):
             worksheet.cell(row = i, column = 1).value = ""
             continue
-        if re.match("^[MCDJ]", str(worksheet.cell(row = i, column = 4).value)) == None or re.match("^TR", str(worksheet.cell(row = i, column = 1).value)):
+        if re.match("^[MCDJB]", str(worksheet.cell(row = i, column = 4).value)) == None or re.match("^TR", str(worksheet.cell(row = i, column = 1).value)):
             worksheet.delete_rows(i, 1)
         elif worksheet.cell(row = i, column = 12).value == 0:
             worksheet.delete_rows(i, 1)

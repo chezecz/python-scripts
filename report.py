@@ -59,7 +59,7 @@ def get_report():
         if wb_output.sheetnames[i+1] == "Job Analysis_COPAK" :
             pattern = "^[C]"
         elif wb_output.sheetnames[i+1] == "Job Analysis_PRINT":
-            pattern = "^[JMD]"
+            pattern = "^[JMDB]"
         else: 
             pattern = ".*"
         target=wb_output.worksheets[i]
